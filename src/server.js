@@ -1,6 +1,7 @@
 const express = require("express")
+require("dotenv").config()
 const app = express()
-const port = 3000
+const port = process.env.PORT
 const userRouters = require("./routes/users.js")
 const middlewareLogs = require("./middleware/logs.js")
 
@@ -8,7 +9,9 @@ const middlewareLogs = require("./middleware/logs.js")
 
 app.listen(port, () => {
     console.log(`server is running on port ${port}`)
+
 })
+console.log(process.env.PORT)
 
 app.use(middlewareLogs)
 app.use(express.json())

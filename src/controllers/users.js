@@ -1,4 +1,4 @@
-const { param } = require("../routes/users")
+require("dotenv").config()
 const userModel = require("../models/users")
 
 const getAllUser = async(req, res) => {

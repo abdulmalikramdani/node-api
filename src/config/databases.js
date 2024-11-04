@@ -1,9 +1,10 @@
+require("dotenv").config({ path: "../../.env" })
 const mysql = require("mysql2")
 const dbPool = mysql.createPool({
-    host: "localhost",
-    user: "root",
+    host: process.env.HOST,
+    user: process.env.DB_USERNAME,
     password: "",
-    database: "api_basic"
+    database: process.env.DB_NAME
 })
 
 module.exports = dbPool.promise()
